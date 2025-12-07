@@ -1,0 +1,11 @@
+[Unit]
+Description=Sync ROMs and Marquees from NAS
+#After=mnt-nas.mount
+#Requires=mnt-nas.mount
+
+[Service]
+Type=idle
+ExecStart=/usr/local/bin/sync.sh
+
+[Install]
+WantedBy=multi-user.target
