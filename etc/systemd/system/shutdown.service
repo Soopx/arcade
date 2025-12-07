@@ -1,0 +1,17 @@
+[Unit]
+Description=Joystick activity shutdown monitor
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/shutdown.sh
+StandardOutput=append:/var/log/activity_monitor.log
+StandardError=append:/var/log/activity_monitor.log
+Restart=always
+RestartSec=10
+#StandardOutput=journal
+#StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
