@@ -1,0 +1,12 @@
+[Unit]
+Description=Flask RetroArch Launcher
+After=network.target
+
+[Service]
+User=admin
+WorkingDirectory=/home/admin/launcher
+ExecStart=/home/admin/launcher/venv/bin/python launcher.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
