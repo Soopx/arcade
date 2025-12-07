@@ -1,0 +1,14 @@
+[Unit]
+Description=Start RetroArch with a random game
+After=network-online.target local-fs.target
+
+[Service]
+Type=simple
+User=admin
+ExecStart=/home/admin/randomgame.sh
+StandardOutput=inherit
+StandardError=inherit
+Restart=no
+
+[Install]
+WantedBy=multi-user.target
